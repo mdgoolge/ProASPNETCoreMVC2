@@ -1,2 +1,2 @@
-# ProASPNETCoreMVC2
-╧╓Ёлсцasp.net2.1 й╣ож
+О╩©# ProASPNETCoreMVC2
+Е╥╔Г╗▀Г■╗asp.net2.1 Е╝·Г▌╟
