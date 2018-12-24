@@ -1,0 +1,46 @@
+﻿@model Result
+@{ Layout = null;}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Routing</title>
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/dist/css/*.min.css" />
+
+</head>
+<body class="m-1 p-2">
+    <table class="table table-bordered table-striped table-sm">
+        <tr><th>Controller:</th><td>@Model.Controller  </td></tr>
+        <tr><th>Action:</th><td>@Model.Action</td></tr>
+        @foreach (string key in Model.Data.Keys)
+        {
+            <tr><th>@key:</th><td>@Model.Data[key]</td></tr>
+        }
+    </table>
+    @*<a asp-action="CustomVariable">This is an outgoing URL</a>*@
+    @*<br />
+        <a asp-controller="Admin" asp-action="Index">
+            This targets another controller
+        </a>
+        <br />
+        <a asp-controller="Customer" asp-action="Index">This is an outgoing URL</a>
+        <br />
+        <a asp-controller="Home" asp-action="Index" asp-route-id="Hello">        This is an outgoing URL    </a>
+        <br />
+        <a asp-controller="Home" asp-action="List" asp-route-page="789">    This is an outgoing URL </a>
+        <br />
+        <a asp-controller="Home" asp-action="Index" asp-route-id="Hello" asp-protocol="https" asp-host="myserver.mydomain.com" asp-fragment="myFragment">        This is an outgoing URL    </a>*@
+
+    @*<a asp-controller="Home" asp-action="CustomVariable">This is an outgoing URL</a>
+        <a asp-route="out">This is an outgoing URL</a>*@
+    @*<p>URL: @Url.Action("CustomVariable", "Home", new { id = 100 })</p>*@
+    <a asp-route-legacyurl="/articles/Windows_3.1_Overview.html" class="btn btn-primary">
+        This is an outgoing URL
+    </a>
+    <p>
+        URL: @Url.Action(null, null,
+  new { legacyurl = "/articles/Windows_3.1_Overview.html" })
+    </p>
+</body>
+</html>
